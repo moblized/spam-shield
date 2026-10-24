@@ -44,3 +44,4 @@ Kotlin + Jetpack Compose, Room, DataStore and WorkManager.
 - `screening/ScreeningService.kt` — answers Android's call-screening request.
 - `data/` — database, settings, FTC download, PhoneBlock client.
 - `ui/` — Home, Rules, Lists and Settings screens.
+- `AppIcon.kt` — switches the launcher icon to the dark version whenever the app is in Dark or Black theme (or System while the phone is in dark mode). It uses two `activity-alias` launcher entries and swaps them when the app goes to the background.

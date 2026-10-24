@@ -54,6 +54,14 @@ class MainActivity : ComponentActivity() {
         vm.refreshPermissions()
     }
 
+    override fun onStop() {
+        super.onStop()
+        // Match the home-screen icon to the theme once the app is out of sight.
+        if (!isChangingConfigurations) {
+            vm.settings.value?.theme?.let { AppIcon.sync(this, it) }
+        }
+    }
+
     private fun requestRole() {
         val roles = getSystemService(RoleManager::class.java)
         if (roles != null && roles.isRoleAvailable(RoleManager.ROLE_CALL_SCREENING)) {
